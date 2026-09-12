@@ -1,4 +1,4 @@
-import { Color_Gradient, Color_Gradient_Text } from "../colors/color";
+import { Color_Gradient, Color_Gradient_Text } from "../Allcolors/Color";
 import HeroImage from "../assets/banner-stack.png";
 const Hero = () => {
   return (
