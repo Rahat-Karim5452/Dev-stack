@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import TechnologyCard from "./TechnologyCard";
 import YourStack from "./YourStack";
 import type { Technology } from "../../Types/types";
-
+import { Color_Gradient_Text } from "../../Allcolors/Color";
 interface TechnologiesProps {
   technologies: Technology[];
   stack: Technology[];
@@ -39,8 +39,7 @@ const Technologies = ({ technologies, stack, setStack }: TechnologiesProps) => {
     <section className="max-w-7xl mx-auto px-4 my-10">
       <div className="mb-8">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-          Explore the{" "}
-          <span className="text-[rgb(217,27,126)]">Technologies</span>
+          Explore the <span className={Color_Gradient_Text}>Technologies</span>
         </h1>
         <p className="text-sm sm:text-base text-gray-500">
           Pick one technology per category to build your ideal stack.
