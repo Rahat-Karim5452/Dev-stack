@@ -10,9 +10,9 @@ const BADGE_COLORS: Record<string, string> = {
   Robust: "bg-sky-50 text-sky-600",
   Modern: "bg-emerald-50 text-emerald-600",
   Containers: "bg-sky-50 text-sky-600",
+  "SSR / Edge": "bg-purple-50 text-purple-600",
 };
 const DEFAULT_COLOR = "bg-gray-100 text-gray-600";
-
 export const getBadgeColor = (badge: string): string => {
   return BADGE_COLORS[badge] ?? DEFAULT_COLOR;
 };
