@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Technologies from "./components/Technology/Technologies";
 import type { Technology } from "./Types/types";
+import Footer from "./components/Footer";
 
 function App() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
@@ -28,6 +29,7 @@ function App() {
           setStack={setStack}
         />
       </Suspense>
+      <Footer />
     </>
   );
 }
