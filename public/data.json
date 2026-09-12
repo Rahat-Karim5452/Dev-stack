@@ -33,7 +33,7 @@
     "id": 4,
     "name": "Next.js",
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-    "badge": "",
+    "badge": "SSR / Edge",
     "description": "The React framework for full-stack web applications with hybrid static & server rendering.",
     "category": "Frontend",
     "difficulty": "Intermediate",
