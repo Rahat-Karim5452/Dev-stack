@@ -1,28 +1,32 @@
-import { Suspense, useEffect, useState } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import type { Technology } from "./Types/types";
 import Technologies from "./components/Technology/Technologies";
+import type { Technology } from "./Types/types";
 
 function App() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
-
-  const [isLoading, setIsLoading] = useState(true);
-
+  const [stack, setStack] = useState<Technology[]>([]);
   useEffect(() => {
     fetch("/data.json")
       .then((response) => response.json())
       .then((data: Technology[]) => {
         setTechnologies(data);
-        setIsLoading(false);
       });
   }, []);
+
   return (
     <>
       <Navbar />
       <Hero />
-      <Suspense fallback="Loading...">
-        <Technologies technologies={technologies} />
+      <Suspense
+        fallback={<p className="text-center py-10 text-gray-500">Loading...</p>}
+      >
+        <Technologies
+          technologies={technologies}
+          stack={stack}
+          setStack={setStack}
+        />
       </Suspense>
     </>
   );

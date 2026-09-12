@@ -1,6 +1,8 @@
 import { toast } from "react-toastify";
-import type { Technology } from "../../Types/types";
 import TechnologyCard from "./TechnologyCard";
+import YourStack from "./YourStack";
+import type { Technology } from "../../Types/types";
+import { Color_Gradient_Text } from "../../Allcolors/Color";
 
 interface TechnologiesProps {
   technologies: Technology[];
@@ -11,6 +13,7 @@ interface TechnologiesProps {
 const Technologies = ({ technologies, stack, setStack }: TechnologiesProps) => {
   const handleAdd = (technology: Technology) => {
     const isAlreadyAdded = stack.some((item) => item.id === technology.id);
+
     if (isAlreadyAdded) {
       toast.warning(`${technology.name} is already in your stack!`);
       return;
@@ -23,11 +26,11 @@ const Technologies = ({ technologies, stack, setStack }: TechnologiesProps) => {
     const technology = stack.find((item) => item.id === id);
     const updatedStack = stack.filter((item) => item.id !== id);
     setStack(updatedStack);
-
     if (technology) {
       toast.info(`${technology.name} removed from your stack`);
     }
   };
+
   const handleRemoveAll = () => {
     setStack([]);
     toast.info("Stack cleared");
@@ -37,7 +40,7 @@ const Technologies = ({ technologies, stack, setStack }: TechnologiesProps) => {
     <section className="max-w-7xl mx-auto px-4 my-10">
       <div className="mb-8">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-          Explore the <span className="">Technologies</span>
+          Explore the <span className={Color_Gradient_Text}>Technologies</span>
         </h1>
         <p className="text-sm sm:text-base text-gray-500">
           Pick one technology per category to build your ideal stack.

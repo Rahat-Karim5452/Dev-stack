@@ -22,7 +22,7 @@ const TechnologyCard = ({ technology, stack, onAdd }: TechnologyCardProps) => {
         />
         {technology.badge && (
           <span
-            className={`text-[11px] px-2.5 py-1 rounded-full ${badgeColor}`}
+            className={`text-[11px] px-2.5 py-1 rounded-full font-semibold ${badgeColor}`}
           >
             {technology.badge}
           </span>
@@ -32,7 +32,7 @@ const TechnologyCard = ({ technology, stack, onAdd }: TechnologyCardProps) => {
       <h2 className="text-lg font-semibold text-gray-900 mt-4 mb-2">
         {technology.name}
       </h2>
-      <p className="text-xs text-gray-500 leading-relaxed min-h-[62px]">
+      <p className="text-xs text-gray-500 leading-relaxed min-h-15.5">
         {technology.description}
       </p>
 
@@ -42,8 +42,8 @@ const TechnologyCard = ({ technology, stack, onAdd }: TechnologyCardProps) => {
         </span>
         <span className="flex-1 text-slate-500">{technology.difficulty}</span>
         <span className="flex items-center gap-1">
-          <FaStar className="text-amber-400" />
-          {technology.rating}
+          <FaStar className="text-amber-400 text-[14px]" />
+          <span className="text-[14px]">{technology.rating}</span>
         </span>
       </div>
 
